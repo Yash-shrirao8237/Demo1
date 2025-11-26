@@ -14,13 +14,14 @@ public class EmailController {
 	
 	
 	@GetMapping("/sendEmail")
-	public void sendEmail()
+	public String sendEmail()
 	{
 		SimpleMailMessage m =new SimpleMailMessage();
 		m.setTo("yashdshrirao@gmail.com");
 		m.setFrom("yashdshrirao@gmail.com");
 		m.setSubject("AVsoft spring Boot email");
-		m.setText("hii this is from avsoft");
+		m.setText("hii this is from avsoft from yash");
 		javaMailSender.send(m);
+		return "done";
 	}
 }
